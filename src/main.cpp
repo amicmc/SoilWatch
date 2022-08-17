@@ -46,11 +46,11 @@ void dispHumidity(SmSensor sms, uint8_t displayY)
 
   String sScreen = String(cAP);
 
-  log_i("mapped: %d\n", mappedValue);
-  log_i("vwcValue: %1f\n", vwcValue);
-  log_i("voltage: %3f\n", voltage);
-  log_i("raw: %d\n", rawValue);
-  log_i("pin: %d\n", sms.getSensorPin());
+  log_i("mapped: %d", mappedValue);
+  log_i("vwcValue: %1f", vwcValue);
+  log_i("voltage: %3f", voltage);
+  log_i("raw: %d", rawValue);
+  log_i("pin: %d", sms.getSensorPin());
   log_i("=======================\n");
 
   Heltec.display->drawString(cursorX, displayY, sScreen);
