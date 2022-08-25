@@ -17,6 +17,7 @@ uint16_t SensorAnalog::readLevel()
     for (int i = 0; i < SEN_REP; i++)
     {
         uint16_t lectura = analogRead(_sensorPin);
+        log_d("Lectura bruta: %d", lectura);
         // Evito divisiones por 0
         if (lectura == 0)
             lectura = 1;

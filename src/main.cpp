@@ -14,7 +14,7 @@ float refVoltage = 3.3;   // voltaje de referencia en la placa
 int rawValue, mappedValue;
 float voltage, vwcValue;
 int minADC = 0;
-int maxADC = 3568;
+int maxADC = 4095;
 
 void logo()
 {
@@ -30,7 +30,7 @@ void dispHumidity(SmSensor sms, uint8_t displayY)
 {
   // S S 128x64
   uint8_t cursorX = 0;
-  uint16_t rawValue = sms.getHumidity();
+  uint16_t rawValue = sms.getRaw();
   voltage = rawValue * refVoltage / maxADC;
   voltage = voltage > 3.3 ? 3.3 : voltage;
   voltage = voltage < 0.0 ? 0 : voltage;
